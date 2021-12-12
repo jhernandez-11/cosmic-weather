@@ -1,0 +1,19 @@
+{
+  "name": "weather-three",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.6.4"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "forecast": "^0.3.2",
+    "geocode": "^0.0.3",
+    "request": "^2.88.2",
+    "three": "^0.135.0"
+  }
+}
