@@ -1,4 +1,4 @@
-import axios from "https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js";
+import axios from 'axios'
 
 const geocode = (address, callback) => {
   const url =
