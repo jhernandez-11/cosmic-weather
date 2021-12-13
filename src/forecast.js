@@ -77,7 +77,7 @@ const forecast = (latitude, longitude, callback) => {
       } else if (temperature >= 40 && temperature <= 49) {
         callback(
           undefined,
-          `${weatherDescription()} It is currently ${temperature + `\u00B0` + 'F'}, somewhat. The humidity is ${humidity}.`
+          `${weatherDescription()} It is currently ${temperature + `\u00B0` + 'F'}, somewhat cold. The humidity is ${humidity}.`
         );
       } else if (temperature >= 30 && temperature <= 39) {
         callback(
