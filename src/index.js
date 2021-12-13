@@ -1,11 +1,11 @@
-import * as THREE from './three/src/Three';
+import * as THREE from 'https://cdn.skypack.dev/three';
 
-import { OrbitControls } from './three/examples/jsm/controls/OrbitControls';
-import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass';
-import { EffectComposer } from './three/examples/jsm/postprocessing/EffectComposer'
-import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass'
-import { ShaderPass } from './three/examples/jsm/postprocessing/ShaderPass'
-import { FontLoader } from './three/examples/jsm/loaders/FontLoader';
+import { OrbitControls } from 'https://cdn.skypack.dev/three/examples/jsm/controls/OrbitControls.js';
+import { UnrealBloomPass } from 'https://cdn.skypack.dev/three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { EffectComposer } from 'https://cdn.skypack.dev/three/examples/jsm/postprocessing/EffectComposer.js'
+import { RenderPass } from 'https://cdn.skypack.dev/three/examples/jsm/postprocessing/RenderPass.js'
+import { ShaderPass } from 'https://cdn.skypack.dev/three/examples/jsm/postprocessing/ShaderPass.js'
+import { FontLoader } from 'https://cdn.skypack.dev/three/examples/jsm/loaders/FontLoader.js';
 import { getCoordinatesHandler } from './api';
 import forecast from '../src/forecast';
 import geocode from '../src/geocode';
@@ -266,7 +266,7 @@ const weatherText = new THREE.Object3D();
 const loadingText = new THREE.Object3D();
 
 function fontLoader(text, message, coordsY) {
-    loader.load( './src/helvetiker_regular.typeface.json', function ( font ) {
+    loader.load( './helvetiker_regular.typeface.json', function ( font ) {
 
         const color = 0x006699;
 

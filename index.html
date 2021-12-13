@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/style.css">
-    <link rel="shortcut icon" href="./public/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
     <title>Cosmic Weather | by Jose Hernandez</title>
   </head>
   <body>
@@ -27,7 +27,9 @@
 				gl_FragColor = ( texture2D( baseTexture, vUv ) + vec4( 1.0 ) * texture2D( bloomTexture, vUv ) );
 			}
 		</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module">
+      import three from 'https://cdn.skypack.dev/three';
+    </script>
     <script type="module" src="./src/index.js"></script>
     <script type="module" src="./src/api.js"></script>
   </body>
