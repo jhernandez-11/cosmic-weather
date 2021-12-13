@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js'
 
 const forecast = (latitude, longitude, callback) => {
   // const url2 =

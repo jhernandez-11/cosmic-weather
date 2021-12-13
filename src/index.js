@@ -7,8 +7,8 @@ import { RenderPass } from 'https://cdn.skypack.dev/three/examples/jsm/postproce
 import { ShaderPass } from 'https://cdn.skypack.dev/three/examples/jsm/postprocessing/ShaderPass.js'
 import { FontLoader } from 'https://cdn.skypack.dev/three/examples/jsm/loaders/FontLoader.js';
 import { getCoordinatesHandler } from './api';
-import forecast from '../src/forecast';
-import geocode from '../src/geocode';
+import forecast from './forecast';
+import geocode from './geocode';
 
 const ENTIRE_SCENE = 0, BLOOM_SCENE = 1;
 
