@@ -1,14 +1,14 @@
-import * as THREE from 'three';
+import * as THREE from './three/src/Three';
 
-import { OrbitControls } from './packages/OrbitControls';
-import { UnrealBloomPass } from './packages/UnrealBloomPass';
-import { EffectComposer } from './packages/EffectComposer'
-import { RenderPass } from './packages/RenderPass'
-import { ShaderPass } from './packages/ShaderPass'
-import { FontLoader } from './packages/FontLoader';
-import { getCoordinatesHandler } from './api'
-import forecast from '../src/forecast'
-import geocode from '../src/geocode'
+import { OrbitControls } from './three/examples/jsm/controls/OrbitControls';
+import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass';
+import { EffectComposer } from './three/examples/jsm/postprocessing/EffectComposer'
+import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass'
+import { ShaderPass } from './three/examples/jsm/postprocessing/ShaderPass'
+import { FontLoader } from './three/examples/jsm/loaders/FontLoader';
+import { getCoordinatesHandler } from './api';
+import forecast from '../src/forecast';
+import geocode from '../src/geocode';
 
 const ENTIRE_SCENE = 0, BLOOM_SCENE = 1;
 
