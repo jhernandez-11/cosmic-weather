@@ -1,11 +1,11 @@
 import * as THREE from 'three';
 
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
-import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass'
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
+import { OrbitControls } from './packages/OrbitControls';
+import { UnrealBloomPass } from './packages/UnrealBloomPass';
+import { EffectComposer } from './packages/EffectComposer'
+import { RenderPass } from './packages/RenderPass'
+import { ShaderPass } from './packages/ShaderPass'
+import { FontLoader } from './packages/FontLoader';
 import { getCoordinatesHandler } from './api'
 import forecast from '../src/forecast'
 import geocode from '../src/geocode'
@@ -130,8 +130,9 @@ function onPointerDown( event ) {
 
     if ( intersects.length > 0 ) {
         const object = intersects[ 0 ].object;
-        object.layers.toggle( BLOOM_SCENE );
-        setLocationHandler();
+        // object.layers.toggle( BLOOM_SCENE );
+        scene.remove( welcomeText );
+        setLocationHandler()
         render();
     }
 }
@@ -265,7 +266,7 @@ const weatherText = new THREE.Object3D();
 const loadingText = new THREE.Object3D();
 
 function fontLoader(text, message, coordsY) {
-    loader.load( './helvetiker_regular.typeface.json', function ( font ) {
+    loader.load( './src/helvetiker_regular.typeface.json', function ( font ) {
 
         const color = 0x006699;
 
