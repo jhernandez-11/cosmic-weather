@@ -1,19 +1,30 @@
 ////// GEOCODE
-const geocode = (address, callback) => {
-    const url =
-      "https://api.mapbox.com/geocoding/v5/mapbox.places/" +
-      encodeURIComponent(address) +
-      ".json?access_token=pk.eyJ1Ijoiam9zZWhkejk4IiwiYSI6ImNrZGV3Mzk5OTE4MGIyd210NDFoZnNxNnUifQ.iDf6YzmBmb0jjKfd2SscfQ&limit=1";
-    axios
-      .get(url)
-      .then((res) => {
-        callback(undefined, {
-          latitude: res.data.features[0].center[1],
-          longitude: res.data.features[0].center[0],
-          location: res.data.features[0].context[2].text + ', ' + res.data.features[0].context[4].text,
-        });
-      })
-      .catch((error) => callback("Location error!", undefined));
+const geocode = async (callback) => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      try {
+        let latitude = position.coords.latitude;
+        let longitude = position.coords.longitude;
+        let coords = longitude + "," + latitude;
+
+        const url =
+          "https://api.mapbox.com/geocoding/v5/mapbox.places/" +
+          encodeURIComponent(coords) +
+          ".json?access_token=pk.eyJ1Ijoiam9zZWhkejk4IiwiYSI6ImNrZGV3Mzk5OTE4MGIyd210NDFoZnNxNnUifQ.iDf6YzmBmb0jjKfd2SscfQ&limit=1";
+        axios
+          .get(url)
+          .then((res) => {
+            callback(undefined, {
+              latitude: res.data.features[0].center[1],
+              longitude: res.data.features[0].center[0],
+              location: res.data.features[0].context[2].text + ', ' + res.data.features[0].context[4].text,
+            });
+          })
+          .catch((error) => callback("Location error!", undefined));
+
+      } catch (error) {
+        console.log(error);
+      }
+    })
   };
 
 ////// FORECAST
@@ -126,28 +137,6 @@ const forecast = (latitude, longitude, callback) => {
         undefined
       );
   };
-  
-////// API
-let coords, longitude, latitude;
-
-const getCoordinatesHandler = async () => {
-    //console.log('stato')
-    if (!navigator.geolocation) {
-      return alert("Geolocation is not supported by your browser!");
-    }
-
-    navigator.geolocation.getCurrentPosition((position) => {
-      try {
-        latitude = position.coords.latitude,
-        longitude = position.coords.longitude,
-        coords = longitude + "," + latitude;
-
-        return coords;
-      } catch (error) {
-        console.log(error);
-      }
-    });
-};
 
 // Get the input field
 // let input = document.getElementById("zipcode");
@@ -246,9 +235,7 @@ const mouse = new THREE.Vector2();
 // Get Weather Report
 
 const setLocationHandler = async () => {
-    const coords = getCoordinatesHandler();
       geocode(
-        coords,
         (error, { latitude, longitude, location } = {}) => {
             if (error) {
                 console.log(error);
@@ -267,7 +254,6 @@ const setLocationHandler = async () => {
         }
     );
 }
-
 
 // Event listeners
 
