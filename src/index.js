@@ -430,7 +430,7 @@ const weatherText = new THREE.Object3D();
 const loadingText = new THREE.Object3D();
 
 function fontLoader(text, message, coordsY) {
-    loader.load( '/helvetiker_regular.typeface.json', function ( font ) {
+    loader.load( './helvetiker_regular.typeface.json', function ( font ) {
 
         const color = 0x006699;
 
