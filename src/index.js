@@ -130,8 +130,6 @@ const forecast = (latitude, longitude, callback) => {
       );
   };
   
-  export default forecast;
-
 ////// API
 let coords, longitude, latitude;
 
@@ -154,8 +152,6 @@ const getCoordinatesHandler = async () => {
     });
 };
 
-
-
 // Get the input field
 // let input = document.getElementById("zipcode");
 // let manualLocation;
@@ -170,9 +166,6 @@ const getCoordinatesHandler = async () => {
 //         null
 //     }
 // });
-
-export  { getCoordinatesHandler }
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import * as THREE from 'https://cdn.skypack.dev/three';
