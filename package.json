@@ -4,8 +4,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start": "vite preview"
+    "start": "node src/index.js"
   },
+  "type": "module",
   "devDependencies": {
     "vite": "^2.6.4"
   },

@@ -15,9 +15,6 @@ const geocode = (address, callback) => {
       })
       .catch((error) => callback("Location error!", undefined));
   };
-  
-  export default geocode;
-
 
 ////// FORECAST
 const forecast = (latitude, longitude, callback) => {
